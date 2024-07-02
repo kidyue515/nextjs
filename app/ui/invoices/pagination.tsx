@@ -1,9 +1,9 @@
 'use client';
 
+import { generatePagination } from '@/app/lib/utils';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { generatePagination } from '@/app/lib/utils';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
@@ -80,7 +80,7 @@ function PaginationNumber({
       'z-10 bg-blue-600 border-blue-600 text-white': isActive,
       'hover:bg-gray-100': !isActive && position !== 'middle',
       'text-gray-300': position === 'middle',
-    },
+    }
   );
 
   return isActive || position === 'middle' ? (
@@ -108,7 +108,7 @@ function PaginationArrow({
       'hover:bg-gray-100': !isDisabled,
       'mr-2 md:mr-4': direction === 'left',
       'ml-2 md:ml-4': direction === 'right',
-    },
+    }
   );
 
   const icon =
